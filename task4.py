@@ -5,4 +5,7 @@ with open('access.log') as f:
             if len(a) > 0:
                 ip = a[0]
                 stat[ip] = stat.get(ip, 0) + 1
-print (sorted(stat.items(), key=lambda x:x[1], reverse=True)[:10])
+c=sorted(stat.items(), key=lambda x:x[1], reverse=True)
+for i in range(10):
+    print (c[i][0], 'request ' + str(c[i][1]))
+
